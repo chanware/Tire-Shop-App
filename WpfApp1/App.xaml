@@ -1,0 +1,28 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <!-- Color definitions -->
+            <Color x:Key="LimeGreenColor">#FF5AF105</Color>
+            <Color x:Key="MustardColor">#FFD7D200</Color>
+            <Color x:Key="KetchupMayoColor">#FFEB5353</Color>
+
+            <!-- SolidColorBrush definitions -->
+            <SolidColorBrush x:Key="LimeGreenBrush" Color="{StaticResource LimeGreenColor}"/>
+            <SolidColorBrush x:Key="MustardBrush" Color="{StaticResource MustardColor}"/>
+            <SolidColorBrush x:Key="KetchupMayoBrush" Color="{StaticResource KetchupMayoColor}"/>
+
+           
+            <SolidColorBrush x:Key="limegreen" Color="{StaticResource LimeGreenColor}"/>
+            <SolidColorBrush x:Key="mustard" Color="{StaticResource MustardColor}"/>
+            <SolidColorBrush x:Key="KetchupMayo" Color="{StaticResource KetchupMayoColor}"/>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+    
+</Application>

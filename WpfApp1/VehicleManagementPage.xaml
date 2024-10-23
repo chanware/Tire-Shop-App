@@ -1,0 +1,186 @@
+﻿<Page x:Class="WpfApp1.VehicleManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="670" 
+      d:DesignWidth="1280"
+      Title="VehicleManagementPage"
+      KeyDown="Page_KeyDown"
+      Loaded="Page_Loaded"
+      >
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="411*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textblock_VehicleManagement" TextWrapping="Wrap" Text="Vehicle Management" FontFamily="Cascadia Mono" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="198,18,198,20"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+        <TextBlock x:Name="textblock_EditVehicleInfo" Margin="188,18,187,19" TextWrapping="Wrap" Text="Edit Vehicle Information" Grid.Column="1" FontFamily="Cascadia Mono SemiBold" Height="23" Width="283" FontSize="18" TextAlignment="Center"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+        <DataGrid x:Name="datagrid_VehicleManagement" 
+                  Grid.Row="1" 
+                  ItemsSource="{Binding Vehicles}"
+                  SelectedItem="{Binding SelectedVehicle, Mode=TwoWay}"
+                  SelectionChanged="DataGrid_SelectionChanged"
+                  Background="Black" 
+                  RowBackground="Black" 
+                  AlternatingRowBackground="#FF161616" 
+                  FontFamily="Cascadia Mono" 
+                  HeadersVisibility="Column"
+                  AutoGenerateColumns="False" Margin="36,80,36,30"
+                  VerticalGridLinesBrush="{StaticResource LimeGreenBrush}"
+                  HorizontalGridLinesBrush="{StaticResource LimeGreenBrush}"
+                  BorderBrush="{StaticResource LimeGreenBrush}"
+                  Foreground="{StaticResource LimeGreenBrush}" IsReadOnly="True">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="{StaticResource LimeGreenBrush}"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Padding" Value="5,5,5,5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                <Grid>
+                                    <Border BorderThickness="0,0,1,1" 
+        BorderBrush="{StaticResource LimeGreenBrush}" 
+        Background="{TemplateBinding Background}">
+                                        <ContentPresenter Margin="10,0,10,0" 
+                      VerticalAlignment="Center" 
+                      HorizontalAlignment="Left"/>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Brand" Binding="{Binding Brand}" />
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Foreground="{StaticResource LimeGreenBrush}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <TextBox x:Name="textbox_VehicleBrand" 
+                 Grid.Column="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="164,30,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="160" 
+                 Text="{Binding Brand, UpdateSourceTrigger=PropertyChanged}" 
+                 Background="Black"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}" 
+                 Height="25" 
+                 FontSize="14" 
+                 FontFamily="Cascadia Mono"/>
+
+
+        <TextBlock x:Name="textblock_VehicleBrand" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vehicle brand:" VerticalAlignment="Top" FontFamily="Cascadia Mono SemiBold" Height="14" Width="141" Grid.Column="1" Margin="18,34,0,0" Grid.Row="1" TextAlignment="Right"
+                   Foreground="{StaticResource LimeGreenBrush}" FontSize="14"/>
+        <TextBlock x:Name="textblock_VehicleCategory" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vehicle category:" VerticalAlignment="Top" FontFamily="Cascadia Mono SemiBold" Height="14" Width="149" Grid.Column="1" Margin="10,80,0,0" Grid.Row="1" TextAlignment="Right"
+                   Foreground="{StaticResource LimeGreenBrush}" FontSize="14"/>
+
+        <Button x:Name="button_SaveVehicleInfo" Grid.Column="1" Content="Save" HorizontalAlignment="Left" Margin="243,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="81" Background="Black" Command="{Binding SaveVehicleCommand}" FontFamily="Cascadia Mono"
+        BorderBrush="{StaticResource LimeGreenBrush}"
+        Foreground="{StaticResource LimeGreenBrush}" FontSize="14"/>
+
+
+        <Button x:Name="button_CancelVehicleInfo" Content="Back" HorizontalAlignment="Left" Margin="36,0,0,0" VerticalAlignment="Center" Width="75" Click="button_CancelVehicleInfo_Click" FontFamily="Cascadia Mono" Height="39" FontWeight="Bold" FontSize="14" Background="Black"
+                BorderBrush="{StaticResource MustardBrush}"
+                Foreground="{StaticResource MustardBrush}"/>
+
+        <Button x:Name="button_DeleteVehicle" 
+            Grid.Column="1" 
+            Command="{Binding DeleteVehicleCommand}" 
+            Content="Delete" 
+            HorizontalAlignment="Left" 
+            Margin="36,156,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Height="29" 
+            Width="80" 
+            Background="Black" 
+            FontFamily="Cascadia Mono"
+            Foreground="{StaticResource KetchupMayoBrush}"
+            BorderBrush="{StaticResource KetchupMayoBrush}" FontSize="14" RenderTransformOrigin="0.509,1.648"/>
+
+        <TextBox x:Name="textbox_Search" 
+                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalAlignment="Left" 
+                 Margin="179,34,0,0" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="201" 
+                 Background="Black" 
+                 Grid.Row="1" 
+                 Height="30" 
+                 FontSize="14" 
+                 FontFamily="Cascadia Mono"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+
+        <ComboBox 
+            x:Name="combobox_VehicleType" 
+            Grid.Column="1" 
+            HorizontalAlignment="Left" 
+            Margin="164,78,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Width="160" 
+            Height="25" 
+            Background="Black" 
+            FontFamily="Cascadia Mono" 
+            FontSize="14"
+            ItemsSource="{Binding VehicleCategories}"
+            SelectedItem="{Binding SelectedCategory}"
+            SelectionChanged="ComboBox_SelectionChanged" >
+
+            <ComboBox.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </ComboBox.Foreground>
+            <ComboBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </ComboBox.BorderBrush>
+        </ComboBox>
+
+
+        <Button x:Name="button_ResetFields" 
+                Grid.Column="1" 
+                Content="Reset fields" 
+                HorizontalAlignment="Left" 
+                Margin="365,27,0,0" 
+                Grid.Row="1" 
+                VerticalAlignment="Top" 
+                Height="29" 
+                Width="130" 
+                Background="Black" 
+                FontFamily="Cascadia Mono" 
+                FontSize="14"
+                Command="{Binding ResetFieldsCommand}">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.Foreground>
+        </Button>
+        <Image x:Name="VehicleIcon" HorizontalAlignment="Left" Margin="164,305,0,0" Grid.Row="1" Width="350" Height="175" VerticalAlignment="Top" Grid.Column="1"/>
+
+    </Grid>
+</Page>

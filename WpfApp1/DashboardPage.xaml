@@ -1,0 +1,302 @@
+﻿<Page x:Class="WpfApp1.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="670 " d:DesignWidth="1280"
+      Title="DashboardPage">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="168*"/>
+            <RowDefinition Height="167*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="458*"/>
+            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="670" VerticalAlignment="Top" Width="164" Grid.RowSpan="2" Fill="{StaticResource LimeGreenBrush}"/>
+
+
+        <Button x:Name="button_Reports" Content="Reports" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Width="130" Background="Black" Click="button_Reports_Click" Height="42" FontFamily="Cascadia Mono" Grid.Column="2" FontSize="14" RenderTransformOrigin="0.237,0.538">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.BorderBrush>
+        </Button>
+
+
+        <TextBlock x:Name="label_Appointments" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" Text="Appointments" VerticalAlignment="Top" Foreground="#FF5AF105" FontSize="24" FontFamily="Cascadia Mono" Width="184" Height="28"/>
+        <TextBlock x:Name="label_Customers" HorizontalAlignment="Left" Margin="38,10,0,0" TextWrapping="Wrap" Text="Customers" VerticalAlignment="Top" Foreground="#FF5AF105" FontSize="24" FontFamily="Cascadia Mono" Width="140" Height="28" Grid.Row="1"/>
+
+        <Button 
+            x:Name="button_AddAppointment" 
+            Grid.Column="1" 
+            Content="Add appointment" 
+            HorizontalAlignment="Center" 
+            Margin="0,40,0,0" 
+            VerticalAlignment="Top" 
+            Height="36" 
+            Width="138" 
+            FontFamily="Cascadia Mono SemiBold" 
+            Background="Black" 
+            Click="button_AddAppointment_Click">
+
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.Foreground>
+
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.BorderBrush>
+
+        </Button>
+
+        <Button x:Name="button_EditAppointment" Grid.Column="1" Content="Edit appointment" HorizontalAlignment="Center" Margin="0,97,0,0" VerticalAlignment="Top" Height="36" Width="138" FontFamily="Cascadia Mono SemiBold" Background="Black" Click="button_EditAppointment_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="button_DeleteAppointment" Grid.Column="1" Content="Delete appointment" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="138" FontFamily="Cascadia Mono SemiBold" Background="Black" Click="button_DeleteAppointment_Click" Margin="0,153,0,0">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="button_AddCustomer" Grid.Column="1" Content="Add customer" HorizontalAlignment="Center" Margin="0,52,0,0" VerticalAlignment="Top" Height="36" Width="138" FontFamily="Cascadia Mono SemiBold" Click="button_AddCustomer_Click" Grid.Row="1" Background="Black">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="button_EditCustomer" Grid.Column="1" Content="Edit customer" HorizontalAlignment="Center" Margin="0,109,0,0" VerticalAlignment="Top" Height="36" Width="138" FontFamily="Cascadia Mono SemiBold" Background="Black" Click="button_EditCustomer_Click" Grid.Row="1">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="button_DeleteCustomer" Grid.Column="1" Content="Delete customer" HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="138" FontFamily="Cascadia Mono SemiBold" Background="Black" Click="button_DeleteCustomer_Click" Margin="0,166,0,0" Grid.Row="1">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.BorderBrush>
+        </Button>
+
+
+
+        <DataGrid x:Name="dataGrid_Appointments"
+          ItemsSource="{Binding AppointmentsVM.AppointmentsView}"
+          AutoGenerateColumns="False"
+          Background="Black"
+          AlternatingRowBackground="#FF161616"
+          RowBackground="Black"
+          HorizontalGridLinesBrush="{StaticResource LimeGreenBrush}"
+          VerticalGridLinesBrush="{StaticResource LimeGreenBrush}"
+          FontFamily="Cascadia Mono"
+          HeadersVisibility="Column"
+          Margin="10,50,10,10" 
+          IsReadOnly="True" 
+          ColumnHeaderHeight="25">
+
+
+            <DataGrid.Resources>
+
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="{StaticResource LimeGreenBrush}"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Padding" Value="5,5,5,5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                <Grid>
+                                    <Border BorderThickness="0,0,1,1" 
+                                BorderBrush="{StaticResource LimeGreenBrush}" 
+                                Background="{TemplateBinding Background}">
+                                        <ContentPresenter Margin="10,0,10,0" 
+                                              VerticalAlignment="Center" 
+                                              HorizontalAlignment="Left"/>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
+                <DataGridTextColumn Header="Customer Name" Binding="{Binding CustomerName}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Selected Tire Brand" Binding="{Binding SelectedTireBrand}" />
+            </DataGrid.Columns>
+
+
+            <DataGrid.Foreground>
+                <SolidColorBrush Color="{StaticResource LimeGreenColor}"/>
+            </DataGrid.Foreground>
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{StaticResource LimeGreenColor}"/>
+            </DataGrid.BorderBrush>
+        </DataGrid>
+
+
+        <DataGrid x:Name="dataGrid_Customers"
+          ItemsSource="{Binding CustomersVM.CustomersView}"
+          SelectedItem="{Binding CustomersVM.CustomerOperations.SelectedCustomer, Mode=TwoWay}"
+          SelectionChanged="dataGrid_Customers_SelectionChanged"
+          AutoGenerateColumns="False"
+          Background="Black"
+          AlternatingRowBackground="#FF161616"
+          RowBackground="Black"
+          HorizontalGridLinesBrush="{StaticResource LimeGreenBrush}"
+          VerticalGridLinesBrush="{StaticResource LimeGreenBrush}"
+          FontFamily="Cascadia Mono"
+          HeadersVisibility="Column"
+          Margin="10,50,10,10" 
+          Grid.Row="1" 
+          IsReadOnly="True" ColumnHeaderHeight="25">
+
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="{StaticResource LimeGreenBrush}"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Padding" Value="5,5,5,5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                                <Grid>
+                                    <Border BorderThickness="0,0,1,1" 
+                    BorderBrush="{StaticResource LimeGreenBrush}" 
+                    Background="{TemplateBinding Background}">
+                                        <ContentPresenter Margin="10,0,10,0" 
+                                  VerticalAlignment="Center" 
+                                  HorizontalAlignment="Left"/>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.Resources>
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+                <DataGridTextColumn Header="City" Binding="{Binding City}" />
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}" />
+                <DataGridTextColumn Header="Vehicle Brand" Binding="{Binding VehicleBrand}" />
+                <DataGridTextColumn Header="Vehicle Category" Binding="{Binding VehicleCategory}" />
+            </DataGrid.Columns>
+            <DataGrid.Foreground>
+                <SolidColorBrush Color="{StaticResource LimeGreenColor}"/>
+            </DataGrid.Foreground>
+            <DataGrid.BorderBrush>
+                <SolidColorBrush Color="{StaticResource LimeGreenColor}"/>
+            </DataGrid.BorderBrush>
+        </DataGrid>
+
+
+        <Button x:Name="button_EmptyDatabase" Grid.Column="2" Content="Purge Database" HorizontalAlignment="Left" Margin="223,23,0,0" VerticalAlignment="Top" Width="138" Height="20" Click="button_EmptyDatabase_Click" Grid.Row="1"/>
+        <Button x:Name="button_ReloadDatagrids" Grid.Column="2" Content="Reload DataGrids" HorizontalAlignment="Left" Margin="223,48,0,0" VerticalAlignment="Top" Width="138" Click="button_ReloadDatagrids_Click" Height="20" Grid.Row="1"/>
+        <Button x:Name="button_PopulateDatabase" Grid.Column="2" Content="Populate database" HorizontalAlignment="Left" Margin="223,73,0,0" VerticalAlignment="Top" Width="138" Click="button_PopulateDatabase_Click" Height="20" Grid.Row="1"/>
+        <Button x:Name="button_VehicleManagement" Grid.Column="2" Content="Vehicle&#xA;Management" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="42" FontFamily="Cascadia Mono" Background="Black" FontSize="14" Click="button_VehicleManagement_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.BorderBrush>
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="button_ExitApp" Grid.Column="2" Content="Exit" Margin="30,258,30,0" Grid.Row="1" VerticalAlignment="Top" Height="36" Background="Black" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Click="button_ExitApp_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource KetchupMayoColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="button_LogOut" Grid.Column="2" Content="Log Out" Margin="30,201,30,0" Grid.Row="1" VerticalAlignment="Top" Height="36" FontFamily="Cascadia Mono" FontWeight="Bold" FontSize="14" Click="button_LogOut_Click" Background="Black">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </Button.BorderBrush>
+        </Button>
+
+        <Button x:Name="button_TireManagement" Grid.Column="2" Content="Tire Inventory&#xA;Management" HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Width="130" Height="42" Background="Black" FontFamily="Cascadia Mono" FontSize="14" Click="button_TireManagement_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.Foreground>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock x:Name="Textblock_SearchAppointments" Margin="483,12,0,0" TextWrapping="Wrap" Text="Search appointments:" VerticalAlignment="Top" Height="24" Width="197" FontFamily="Cascadia Mono" FontSize="16" TextAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox x:Name="Textbox_SearchAppointments" HorizontalAlignment="Right" Margin="0,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="28" Background="Black" FontFamily="Cascadia Mono" FontSize="16">
+            <TextBox.SelectionTextBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionTextBrush>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.Foreground>
+        </TextBox>
+        <TextBlock x:Name="Textblock_SearchCustomers" HorizontalAlignment="Left" Margin="483,12,0,0" TextWrapping="Wrap" Text="Search customers:" VerticalAlignment="Top" Height="24" Width="197" FontFamily="Cascadia Mono" FontSize="16" TextAlignment="Center" Grid.Row="1">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox x:Name="Textbox_SearchCustomers" HorizontalAlignment="Right" Margin="0,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" Height="28" Background="Black" FontFamily="Cascadia Mono" FontSize="16" Grid.Row="1">
+            <TextBox.SelectionTextBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionTextBrush>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.Foreground>
+        </TextBox>
+
+
+    </Grid>
+</Page>

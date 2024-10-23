@@ -1,0 +1,325 @@
+﻿<Page x:Class="WpfApp1.AppointmentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="670" d:DesignWidth="1280"
+      Title="AppointmentsPage"
+      KeyDown="Page_KeyDown"
+      Loaded="Page_Loaded"
+      >
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="207*"/>
+            <ColumnDefinition Width="385*"/>
+            <ColumnDefinition Width="259*"/>
+            <ColumnDefinition Width="429*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="411*"/>
+            <RowDefinition Height="196*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="textblock_VehicleManagement" 
+                   TextWrapping="Wrap" 
+                   Text="Edit Appointment" 
+                   FontFamily="Cascadia Mono" 
+                   FontSize="20" 
+                   FontWeight="Bold" 
+                   TextAlignment="Center" 
+                   Margin="10,10,10,10" Grid.Column="1"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_Customer" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Customer:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="20" 
+                   Width="83" 
+                   Margin="114,98,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_Employee" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Employee:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="20" 
+                   Width="83" 
+                   Margin="114,27,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBox x:Name="textbox_Employee" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,27,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="183" 
+                 Grid.Column="1" 
+                 Background="Black" 
+                 FontFamily="Cascadia Mono" 
+                 Height="20" 
+                 FontSize="14"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+        <ComboBox x:Name="combobox_Customer" 
+                  Grid.Column="1" 
+                  HorizontalAlignment="Left" 
+                  Margin="10,96,0,0" 
+                  Grid.Row="1" 
+                  VerticalAlignment="Top" 
+                  Width="183" 
+                  Height="22"/>
+
+        <TextBlock x:Name="textblock_CustomerVehicle" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Customer's vehicle:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="33" 
+                   Width="83" 
+                   Margin="114,139,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBox x:Name="textbox_CustomerVehicle" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,148,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="183" 
+                 Grid.Column="1" 
+                 Background="Black" 
+                 FontFamily="Cascadia Mono" 
+                 Height="20" 
+                 FontSize="14"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_VehicleType" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Vehicle type:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="33" 
+                   Width="83" 
+                   Margin="114,186,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBox x:Name="textbox_VehicleType" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,193,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="118" 
+                 Grid.Column="1" 
+                 Background="Black" 
+                 FontFamily="Cascadia Mono" 
+                 Height="20" 
+                 FontSize="14"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_RecommendedTires" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Recommended tires:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="20" 
+                   Width="167" 
+                   Margin="30,305,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBox x:Name="textbox_RecommendedTires" 
+                 HorizontalAlignment="Left" 
+                 Margin="10,303,0,0" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="183" 
+                 Grid.Column="1" 
+                 Background="Black" 
+                 FontFamily="Cascadia Mono" 
+                 Height="20" 
+                 FontSize="14"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_TiresInStock" 
+                   TextWrapping="Wrap" 
+                   Text="Tire sets in stock:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="20" 
+                   Margin="41,344,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}" HorizontalAlignment="Left"/>
+
+        <DatePicker x:Name="datepicker_AppointmentDate" Grid.Column="3" 
+                    HorizontalAlignment="Left" 
+                    Grid.Row="1" 
+                    VerticalAlignment="Top" 
+                    Height="23" 
+                    Width="237" 
+                    Background="Black" 
+                    FontFamily="Cascadia Mono SemiBold" Margin="10,24,0,0" BorderBrush="#FF5AF105" FontSize="14">
+            <DatePicker.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </DatePicker.Foreground>
+        </DatePicker>
+
+        <TextBlock x:Name="textblock_AppointmentDate" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Appointment date:" 
+                   VerticalAlignment="Top" 
+                   FontFamily="Cascadia Mono SemiBold" 
+                   Height="23" 
+                   Width="167" 
+                   Margin="82,24,0,0" 
+                   Grid.Row="1" 
+                   TextAlignment="Right" 
+                   Grid.Column="2" 
+                   FontSize="14"
+                   Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <Button x:Name="button_SaveAppointment" Grid.Column="3" Content="Save" Margin="10,334,0,0" Grid.Row="1" Height="40" FontFamily="Cascadia Mono" FontSize="14" Background="Black" Width="76" HorizontalAlignment="Left" VerticalAlignment="Top"
+                BorderBrush="{StaticResource LimeGreenBrush}"
+                Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <Button x:Name="Button_CancelEditAppt" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="40" Width="75" FontFamily="Cascadia Mono" FontSize="14" Background="Black"
+                Foreground="{StaticResource MustardBrush}"
+                BorderBrush="{StaticResource MustardBrush}"/>
+
+        <TextBlock x:Name="textblock_AppointmentTime" 
+            HorizontalAlignment="Left" 
+            TextWrapping="Wrap" 
+            Text="Appointment time block:" 
+            VerticalAlignment="Top" 
+            FontFamily="Cascadia Mono SemiBold" 
+            Height="23" 
+            Width="210" 
+            Margin="39,83,0,0" 
+            Grid.Row="1" 
+            TextAlignment="Right" 
+            Grid.Column="2" 
+            FontSize="14"
+            Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <ComboBox x:Name="combobox_AppointmentTime"
+          Grid.Column="3"
+          HorizontalAlignment="Left"
+          Margin="10,83,0,0"
+          Grid.Row="1"
+          VerticalAlignment="Top"
+          Width="120"
+          Background="Black"
+          FontFamily="Cascadia Mono Light" FontWeight="Bold" Height="20"
+          BorderBrush="{StaticResource LimeGreenBrush}">
+            <ComboBox.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </ComboBox.Foreground>
+        </ComboBox>
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2"/>
+        <TextBlock x:Name="textblock_AppointmentTimeSubtitle" 
+            HorizontalAlignment="Left" 
+            TextWrapping="Wrap" 
+            Text="Appointments are 30 minutes each" 
+            VerticalAlignment="Top" 
+            FontFamily="Cascadia Mono SemiBold" 
+            Height="35" 
+            Width="167" 
+            Margin="82,107,0,0" 
+            Grid.Row="1" 
+            TextAlignment="Center" 
+            Grid.Column="2" 
+            FontSize="14">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <TextBox x:Name="textbox_AppointmentDescription" Grid.Column="3" HorizontalAlignment="Left" Margin="10,179,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="237" Height="93" Background="Black">
+            <TextBox.SelectionTextBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionTextBrush>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.Foreground>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <TextBlock x:Name="textblock_AppointmentDescription" 
+            HorizontalAlignment="Left" 
+            TextWrapping="Wrap" 
+            Text="Appointment description:" 
+            VerticalAlignment="Top" 
+            FontFamily="Cascadia Mono SemiBold" 
+            Height="24" 
+            Width="210" 
+            Margin="39,179,0,0" 
+            Grid.Row="1" 
+            TextAlignment="Right" 
+            Grid.Column="2" 
+            FontSize="14"
+            Foreground="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_TiresInStock" Grid.Column="1" HorizontalAlignment="Left" Margin="10,344,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="71" Height="20" Background="Black" FontFamily="Cascadia Mono" FontSize="14">
+            <TextBox.SelectionTextBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionTextBrush>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Color="{DynamicResource MustardColor}"/>
+            </TextBox.SelectionBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.Foreground>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBox.BorderBrush>
+        </TextBox>
+
+    </Grid>
+</Page>

@@ -1,0 +1,141 @@
+﻿<Page x:Class="WpfApp1.CustomerEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="670" 
+      d:DesignWidth="1280"
+      Title="Customer Edit" 
+      Background="Black"
+      KeyDown="Page_KeyDown"
+      Loaded="Page_Loaded" 
+      >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="184*"/>
+            <ColumnDefinition Width="254*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="textblock_EditCustomerInfo" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Edit Customer Information" VerticalAlignment="Center" Width="479" Height="30" FontFamily="Cascadia Mono" FontSize="20" Grid.ColumnSpan="2" FontWeight="Bold" TextAlignment="Center" Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBlock x:Name="textblock_CustomerName" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="89" TextAlignment="Right" Height="16" Grid.Row="1" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,17,0,0"/>
+        <TextBlock x:Name="textblock_CustomerEmail" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Center" Width="89" TextAlignment="Right" Height="16" Grid.Row="2" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,0,0,0"/>
+        <TextBlock x:Name="textblock_CustomerPhone" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Phone:" VerticalAlignment="Center" Width="89" TextAlignment="Right" Height="16" Grid.Row="3" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,0,0,0"/>
+        <TextBlock x:Name="textblock_CustomerAddress1" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Address:" VerticalAlignment="Top" Width="89" TextAlignment="Right" Height="16" Grid.Row="4" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,15,0,0"/>
+        <TextBlock x:Name="textblock_CustomerAddress2" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Address 2:" VerticalAlignment="Top" Width="89" TextAlignment="Right" Height="16" Grid.Row="5" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,15,0,0"/>
+        <TextBlock x:Name="textblock_CustomerCity" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="City:" VerticalAlignment="Top" Width="89" TextAlignment="Right" Height="16" Grid.Row="6" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,15,0,0"/>
+        <TextBlock x:Name="textblock_CustomerCountry" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Country:" VerticalAlignment="Top" Width="89" TextAlignment="Right" Height="16" Grid.Row="7" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="{StaticResource LimeGreenBrush}" Margin="75,12,0,0"/>
+
+        <TextBlock x:Name="textblock_CustomerVehicleBrand" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vehicle brand:" VerticalAlignment="Center" Width="164" TextAlignment="Right" Height="16" Grid.Row="1" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Margin="121,0,0,0" Foreground="{StaticResource LimeGreenBrush}"/>
+        <TextBlock x:Name="textblock_CustomerVehicleCategory" Grid.Column="3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Vehicle category:" VerticalAlignment="Top" Width="164" TextAlignment="Right" Height="16" Grid.Row="2" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Margin="121,16,0,0" Foreground="{StaticResource LimeGreenBrush}"/>
+
+        <TextBox x:Name="textbox_CustomerName" Grid.Column="2" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_CustomerEmail" Grid.Column="2" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_CustomerPhone" Grid.Column="2" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_CustomerAddress1" Grid.Column="2" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_CustomerAddress2" Grid.Column="2" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+        <TextBox x:Name="textbox_CustomerCity" Grid.Column="2" HorizontalAlignment="Left" Margin="19,10,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="184" Height="18" Background="Black" FontFamily="Cascadia Mono"
+                 SelectionTextBrush="{StaticResource MustardBrush}"
+                 SelectionBrush="{StaticResource MustardBrush}"
+                 Foreground="{StaticResource LimeGreenBrush}"
+                 BorderBrush="{StaticResource LimeGreenBrush}"/>
+
+        <ComboBox x:Name="combobox_CustomerCountry" 
+                  Grid.Column="2" 
+                  HorizontalAlignment="Left" 
+                  Grid.Row="7" 
+                  VerticalAlignment="Top" 
+                  Width="183" Height="20" 
+                  Background="Black" 
+                  FontFamily="Cascadia Mono"
+                  BorderBrush="{StaticResource LimeGreenBrush}" Margin="20,10,0,0">
+            <ComboBox.Foreground>
+                <SolidColorBrush Color="Black"/>
+            </ComboBox.Foreground>
+        </ComboBox>
+
+        <ComboBox 
+            x:Name="combobox_CustomerVehicleBrand" 
+            Grid.Column="4" 
+            HorizontalAlignment="Left" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Width="234" 
+            Height="21" 
+            FontFamily="Cascadia Mono"
+            ItemsSource="{Binding VehicleBrands}"
+            SelectedItem="{Binding SelectedVehicleBrand}"
+            SelectionChanged="ComboBox_SelectionChanged"
+            Background="Black"
+            BorderBrush="{StaticResource LimeGreenBrush}" 
+            Margin="10,14,0,0"/>
+
+
+        <Button x:Name="button_SaveCustomerEdits" Grid.Column="3" Content="Save" HorizontalAlignment="Center" Grid.Row="9" VerticalAlignment="Center" Height="33" Width="76" Background="Black" Click="button_SaveCustomerEdits_Click" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold"
+                BorderBrush="{StaticResource LimeGreenBrush}"
+                Foreground="{StaticResource LimeGreenBrush}"/>
+        <Button x:Name="button_CancelCustomerEdits" Grid.Column="2" Content="Cancel" HorizontalAlignment="Center" Grid.Row="9" VerticalAlignment="Center" RenderTransformOrigin="0.618,0.14" Height="33" Width="76" Background="Black" Click="button_CancelCustomerEdits_Click" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold"
+                BorderBrush="{StaticResource KetchupMayoBrush}"
+                Foreground="{StaticResource KetchupMayoBrush}"/>
+
+
+        <TextBlock 
+            x:Name="Textblock_VehicleCategory" 
+            Grid.Column="4" 
+            HorizontalAlignment="Left" 
+            Margin="10,16,0,0" 
+            Grid.Row="2" 
+            TextWrapping="Wrap"
+            Text="{Binding SelectedVehicleCategory}"
+            VerticalAlignment="Top" 
+            Width="130" 
+            Height="16" 
+            FontFamily="Cascadia Mono" 
+            FontSize="14">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource LimeGreenColor}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Image x:Name="VehicleIcon" Margin="28,22,28,0" Height="175" VerticalAlignment="Top" Grid.Column="4" Grid.RowSpan="4" Grid.Row="4"/>
+
+
+    </Grid>
+</Page>
