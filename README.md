@@ -1,9 +1,3 @@
----
-description: 
-tags: 
-title: "Carlo's Tire - Schedule Management App"
----
-
 # Carlo's Tire - Schedule Management App
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -50,29 +44,35 @@ The data in this app is stored within a SQLite database to promote app independe
 ## Screenshots
 
 **User login**
-![](Media/login-filled.png)
+![Login](https://github.com/user-attachments/assets/76ba964e-e842-490f-a928-92eb89502233)
+
 
 **The main dashboard**
-![](Media/dashboard-complete.png)
+![Dashboard](https://github.com/user-attachments/assets/d3bfa6c5-d6b1-4416-a52b-c6db96aaade3)
 
 
 **Adding or editing customers to the database**
-![](Media/add-edit-customer-page.png)
+![edit customer page 2](https://github.com/user-attachments/assets/6a29ed58-dfde-4f1a-8de2-c7eb55812926)
 
 
 **Adding or editing appointments**
-![](Media/add-edit-appt-page.png)
+![edit appointment form](https://github.com/user-attachments/assets/c49c351f-c778-47f3-9816-d9b1be29f18d)
+
 
 **Tire management**
-![](Media/tire-mgmt-page.png)
+![tire mgmt page](https://github.com/user-attachments/assets/ae0dd783-d41b-4eae-b192-f302ff5d00f6)
+
 
 **Vehicle management**
-![](Media/vehicle-mgmt-page.png)
+![vehicle mgmt page 1](https://github.com/user-attachments/assets/4484bc7f-1974-4bc8-8adc-801c8c7fd083)
+
 
 **Report generation page**
-![](Media/report-page-dropdown-demo.png)
-**Report pop-up window**
-![](Media/report-window-result.png)
+![reports page](https://github.com/user-attachments/assets/874f7f56-6d7a-4a3e-be13-f3ef81779662)
+
+
+**Print Report pop-up window**
+![report print window](https://github.com/user-attachments/assets/98ec1304-d4a2-487a-8135-6e06a0457ca6)
 
 
 ---
@@ -81,7 +81,8 @@ The data in this app is stored within a SQLite database to promote app independe
 
 Here’s a demo video showcasing the Vehicle Management feature:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8OyW-fVfc0s" frameborder="0" allowfullscreen></iframe>
+https://github.com/user-attachments/assets/e63c44e3-10bb-46ad-a1e9-48361be0ff13
+
 
 ---
 ## Contributing
@@ -98,4 +99,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 For any questions, feel free to reach out to me at deafbits@gmail.com
+
+
+
 
