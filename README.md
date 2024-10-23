@@ -76,8 +76,8 @@ The data in this app is stored within a SQLite database to promote app independe
 
 Here’s a demo video showcasing the Vehicle Management feature:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8OyW-fVfc0s" frameborder="0" allowfullscreen></iframe>
-
+[<iframe width="560" height="315" src="https://www.youtube.com/embed/8OyW-fVfc0s" frameborder="0" allowfullscreen></iframe>
+](https://youtu.be/8OyW-fVfc0s)
 ---
 ## Contributing
 If you'd like to contribute to this project, feel free to submit a pull request or open an issue.
