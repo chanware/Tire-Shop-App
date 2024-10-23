@@ -1,8 +1,3 @@
----
-description: 
-tags: 
-title: "Carlo's Tire - Schedule Management App"
----
 
 # Carlo's Tire - Schedule Management App
 
